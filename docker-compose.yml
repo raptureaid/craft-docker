@@ -55,6 +55,11 @@ services:
       dockerfile: ./Dockerfile
     env_file:
       *env
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: project
+      MYSQL_USER: project
+      MYSQL_PASSWORD: project
     init: true
     ports:
       - "3306:3306"
