@@ -46,7 +46,9 @@ WORKDIR /var/www/project/cms
 # but saves far more time in not having to deal with out of sync versions
 # when working with teams or multiple environments
 CMD composer install --verbose --no-progress --no-scripts --optimize-autoloader --no-interaction \
-    && chown -R www-data:www-data /var/www/project/cms/vendor \
+    && chown -R www-data:www-data /var/www/project/cms/config \
     && chown -R www-data:www-data /var/www/project/cms/storage \
+    && chown -R www-data:www-data /var/www/project/cms/vendor \
+    && chown -R www-data:www-data /var/www/project/cms/web \
     && composer craft-update \
     && php-fpm
